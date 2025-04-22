@@ -3,6 +3,24 @@
 
 A web application that visualizes statistics and recent earthquakes on an interactive map using Leaflet and USGS (United States Geological Survey) earthquake data.
 
+## 🎯 Purpose of the Project
+
+This dashboard is part of a larger **Big Data pipeline** project focused on:
+
+🔄 Real-time data collection from USGS Earthquake API every minute with redundancy filtering.
+
+🗃️ Raw storage in an HDFS-based Data Lake.
+
+🔥 Streaming processing using Spark Structured Streaming for live updates.
+
+🧮 Batch processing via Apache Spark for cleaning, stats, and aggregations.
+
+🧷 MongoDB for storing streaming results, HDFS for batch outputs.
+
+📊 Visualization with this dashboard (Leaflet.js) and future stats panels.
+
+The goal is to provide an interactive interface for users to **visualize earthquake activity** filtered by time and magnitude, based on data ingested and processed through the Big Data pipeline.
+
 ## 🚀 Features
 
 - 📊 Displays recent earthquakes on a dynamic map
