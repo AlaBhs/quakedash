@@ -47,12 +47,12 @@ A web application that visualizes statistics and recent earthquakes on an intera
 
 4. Open `http://localhost:3000` in your browser.
 
-## 📷 Screenshot
+## 📷 Screenshots
 
 ### 🌍 Earthquake Map View
 ![Earthquake Map](./public/screenshots/map.png)
 
-### 🔍 Filter Example
+### 🔍 Filter by min magnitude Example
 ![Filter by Magnitude](./public/screenshots/filter.png)
 
 ### 📈 General Statistics
