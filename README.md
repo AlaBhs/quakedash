@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🌍 Earthquake Realtime Map and Stats
 
-First, run the development server:
+A web application that visualizes statistics and recent earthquakes on an interactive map using Leaflet and USGS (United States Geological Survey) earthquake data.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- 📊 Displays recent earthquakes on a dynamic map
+- 🕒 Filter earthquakes by time range:
+  - Last hour
+  - Last day
+  - Last week
+  - Last month
+- 📈 Filter earthquakes by minimum magnitude
+- ⚡ Real-time loading indicator during data fetch
+- 💻 Built with Next.js, React, TailwindCSS, Leaflet
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 How it works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Fetches earthquake data from the USGS GeoJSON feed
+- Uses Leaflet to render interactive map with markers for each earthquake
+- React state updates the map in real time when filters change
 
-## Learn More
+## 🛠 Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Frontend**: Next.js (App Router), Tailwind CSS, Shadcn
+- **Map**: Leaflet with React integration
+- **Data Source**: [USGS Earthquake API](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/AlaBhs/quakedash.git
+   cd earthquake-map
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open `http://localhost:3000` in your browser.
+
+## 📷 Screenshot
+
+### 🌍 Earthquake Map View
+![Earthquake Map](./public/screenshots/map.png)
+
+### 🔍 Filter Example
+![Filter by Magnitude](./public/screenshots/filter.png)
+
+### 📈 General Statistics
+![Last Stats](./public/screenshots/stats.png)
+
+## 📄 License
+
+MIT License – [AlaBhs](https://github.com/AlaBhs)
