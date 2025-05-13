@@ -1,51 +1,57 @@
+# 🌍 Disasters Realtime Map and Stats Dashboard
 
-# 🌍 Earthquake Realtime Map and Stats
-
-A web application that visualizes statistics and recent earthquakes on an interactive map using Leaflet and USGS (United States Geological Survey) earthquake data.
+A web application that visualizes real‐time and batch disaster data (earthquakes, wildfires, icebergs, floods, etc.) on an interactive map and rich statistics panels. Built on Next.js with a MongoDB backend and integrated into a larger Big Data pipeline.
 
 ## 🎯 Purpose of the Project
 
-This dashboard is part of a larger **Big Data pipeline** project focused on:
+Part of a **Big Data pipeline** for:
 
-🔄 Real-time data collection from USGS Earthquake API every minute with redundancy filtering.
+- 🔄 **Streaming ingestion** (Spark Structured Streaming) of multiple sources (USGS, EONET, GDACS)  
+- 🗃️ Storage in MongoDB & HDFS  
+- 🧮 **Batch processing** with Spark for cleaning, aggregations, and historical stats  
+- 📊 **Visualization** with this dashboard (Leaflet, Recharts)  
 
-🗃️ Raw storage in an HDFS-based Data Lake.
-
-🔥 Streaming processing using Spark Structured Streaming for live updates.
-
-🧮 Batch processing via Apache Spark for cleaning, stats, and aggregations.
-
-🧷 MongoDB for storing streaming results, HDFS for batch outputs.
-
-📊 Visualization with this dashboard (Leaflet.js) and future stats panels.
-
-The goal is to provide an interactive interface for users to **visualize earthquake activity** filtered by time and magnitude, based on data ingested and processed through the Big Data pipeline.
+The goal is to let users explore both **live** and **historical** disaster events filtered by time, magnitude/size, and type.
 
 ## 🚀 Features
 
-- 📊 Displays recent earthquakes on a dynamic map
-- 🕒 Filter earthquakes by time range:
-  - Last hour
-  - Last day
-  - Last week
-  - Last month
-- 📈 Filter earthquakes by minimum magnitude
-- ⚡ Real-time loading indicator during data fetch
-- 💻 Built with Next.js, React, TailwindCSS, Leaflet
+### Map & Live Data
 
-## 🧠 How it works
+- 🗺️ **Interactive 2D map** (Leaflet) with switchable street/satellite layers  
+- 🔀 **Multiple disaster sources** (USGS earthquakes, EONET events, GDACS alerts) merged into one “disaster” feed  
+- 🎯 **Filters** by:
+  - Time range: Last hour / day / week / month  
+  - Minimum magnitude/size  
+  - Disaster type (Earthquake, Wildfires, Sea & Lake Ice, Flood, Explosion, etc.)  
+- 🟢🔴 **Color‐coded, icon‐driven markers** on the map, with size and hue proportional to severity
 
-- Fetches earthquake data from the USGS GeoJSON feed
-- Uses Leaflet to render interactive map with markers for each earthquake
-- React state updates the map in real time when filters change
 
-## 🛠 Tech Stack
+### Batch Statistics
 
-- **Frontend**: Next.js (App Router), Tailwind CSS, Shadcn
-- **Map**: Leaflet with React integration
-- **Data Source**: [USGS Earthquake API](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
+- 📈 **General stats** (total events, strongest, weakest, average) per source or type  
+- 📊 **Pie chart** showing % distribution of event types  
+- 📉 **Bar/line charts** for:
+  - Magnitude/size distribution (dynamic scales per type)  
+  - Events over time (minute/hour/week buckets)  
+  - Top affected regions  
+- 🏆 **Top-N dangerous events** list, styled with ShadCN/UI cards  
+- 📦 **Import JSON** files of additional disaster data, seamlessly merged into exportable report  
 
-## 📦 Getting Started
+### PDF & Image Export
+
+- 📄 **Export entire statistics panel** (grouped two sections per page) to multi‐page PDF  
+- 🖼️ **Download as high‐resolution PNG** of the full stats section  
+
+## 🏗️ Tech Stack
+
+- **Next.js** (App Router, React 18)  
+- **Leaflet** for mapping, dynamic `divIcon` marker overlays  
+- **Recharts** for all charts (Bar, Line, Pie)  
+- **ShadCN/ui** & **TailwindCSS** for UI components & styling  
+- **html2canvas-pro** + **jsPDF** (or direct PNG) for client‐side export  
+- **MongoDB** (collections: `usgs`, `eonet`, `gdacs`, plus user‐imported JSON)  
+
+## 🔧 Getting Started
 
 1. Clone the repository:
    ```bash
@@ -67,14 +73,16 @@ The goal is to provide an interactive interface for users to **visualize earthqu
 
 ## 📷 Screenshots
 
-### 🌍 Earthquake Map View
-![Earthquake Map](./public/screenshots/map.png)
+### 🌍 Real Time Map View
+![Real Time Map](./public/screenshots/map1.png)
 
-### 🔍 Filter by min magnitude Example
-![Filter by Magnitude](./public/screenshots/filter.png)
+### 📈 Statistics View
+![Stats](./public/screenshots/stats.png)
 
-### 📈 General Statistics
-![Last Stats](./public/screenshots/stats.png)
+### 🔍 Import JSON Files Or From Mongodb Collections Feature
+![Import JSON Files](./public/screenshots/import.png)
+
+
 
 ## 📄 License
 

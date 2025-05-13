@@ -4,7 +4,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Earthquake Dashboard',
+  title: 'QuakeDash',
   description: 'Live data and visualizations',
 };
 

@@ -10,7 +10,7 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const links = [
-    { name: 'Map', href: '/map', icon: <FiMap /> },
+    { name: 'Real Time Map', href: '/map', icon: <FiMap /> },
     { name: 'Statistics', href: '/statistics', icon: <FiBarChart2 /> },
     { name: 'Settings', href: '/settings', icon: <FiSettings /> },
   ];
