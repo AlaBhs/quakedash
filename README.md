@@ -56,7 +56,7 @@ The goal is to let users explore both **live** and **historical** disaster event
 1. Clone the repository:
    ```bash
    git clone https://github.com/AlaBhs/quakedash.git
-   cd earthquake-map
+   cd quakedash
    ```
 
 2. Install dependencies:
