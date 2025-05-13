@@ -2,7 +2,12 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-
+@media print {
+  body, .printer-friendly {
+    background: white !important;
+    color: black !important;
+  }
+}
 :root {
   /* my template alabhs */
   --raisin-black: #312a31ff;
@@ -79,6 +84,10 @@
 }
 .bg-bright-pink-crayola {
   background-color: var(--bright-pink-crayola);
+}
+.hoverBtn:hover {
+  background-color: var(--rose-taupe) !important;
+  color: var(--french-gray-2) !important;
 }
 :root {
   --color-background: var(--background);
